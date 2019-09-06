@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.9.0)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - SwiftyJSON (5.0.0)
+  - XCoordinator (1.5.2):
+    - XCoordinator/Core (= 1.5.2)
+  - XCoordinator/Core (1.5.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - NVActivityIndicatorView
+  - SwiftyJSON
+  - XCoordinator
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - NVActivityIndicatorView
+    - SwiftyJSON
+    - XCoordinator
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  XCoordinator: 606dcbf1728f30a280b9a0f1f26e2ee439f61ac9
+
+PODFILE CHECKSUM: 0c045d3db4c5a6072fab79eec3bb7d7191b5e952
+
+COCOAPODS: 1.7.1

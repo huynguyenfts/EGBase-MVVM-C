@@ -1,0 +1,6 @@
+framework module Pods_EGBase_MVVM_CUITests {
+  umbrella header "Pods-EGBase-MVVM-CUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
