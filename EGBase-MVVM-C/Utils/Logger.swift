@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct Logger {
-    static func log(_ message: String? = nil) {
-        print("🤡🤡🤡 Called by \(#file) - \(#function) at line \(#line): \(String(describing: message))")
-    }
+func logD(_ message: String? = nil, file: String = #file, function: String = #function, line: Int = #line) {
+    #if DEBUG
+    let className = (file as NSString).lastPathComponent
+    print("\n ❤️ \(message ?? "") - \(function) at line \(line) - \(className)")
+    #endif
 }

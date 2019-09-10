@@ -8,23 +8,30 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: BaseViewController, BindableType {
 
+    var viewModel: SettingViewModel!
+    @IBOutlet weak var aboutUsBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func bindViewModel() {
+        
     }
-    */
-
+    
+    func updateUI() {
+        title = "Setting"
+    }
+    
+    @IBAction func tapAboutUsBtn(_ sender: Any) {
+        viewModel.goToAboutUs()
+    }
+    
+    @IBAction func tapLogoutBtn(_ sender: Any) {
+        viewModel.goToLogin()
+    }
 }

@@ -8,23 +8,21 @@
 
 import UIKit
 
-class SearchRepoViewController: UIViewController {
+class SearchRepoViewController: BaseViewController, BindableType {
 
+    var viewModel: SearchRepoViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func bindViewModel() {
+        
     }
-    */
+    
+    func updateUI() {
+        title = "Search"
+    }
 
 }

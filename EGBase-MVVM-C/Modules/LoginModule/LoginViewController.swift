@@ -8,21 +8,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController, BindableType {
+    var viewModel: LoginViewModel!
     
     @IBOutlet weak var emailTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
     @IBOutlet weak var loginButton: UIButton!
-    
-    var viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.bindValue()
         self.updateUI()
     }
     
-    private func bindValue() {
+    func bindViewModel() {
         emailTextField.bind { [weak self] (email) in
             guard let strongSelf = self else { return }
             strongSelf.viewModel.email.value = email
@@ -45,9 +43,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let repoVC = storyboard.instantiateViewController(withIdentifier: "RepoViewController") as? RepoViewController else { return }
-        self.navigationController?.pushViewController(repoVC, animated: true)
+        viewModel.requestLogin()
+        // Có thể dùng bindAndFire để clear text email và password
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
 }
 

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum StoryboardIdentifier: String {
+    case login = "Login"
+    case search = "Search"
+    case follow = "Follow"
+    case setting = "Setting"
+}
+

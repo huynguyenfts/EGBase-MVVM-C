@@ -7,3 +7,30 @@
 //
 
 import Foundation
+import XCoordinator
+
+class SettingViewModel {
+    
+    // MARK: - Variable
+    
+    private let router: AnyRouter<SettingRoute>
+    
+    // MARK: - Init
+    
+    init(router: AnyRouter<SettingRoute>) {
+        self.router = router
+    }
+    
+    // MARK: - Navigator
+    func goToLogin() {
+        router.trigger(.logout)
+    }
+    
+    func goToAboutUs() {
+        router.trigger(.about)
+    }
+    
+    // MARK: - Logic
+    
+    
+}

@@ -7,7 +7,33 @@
 //
 
 import UIKit
+import Foundation
+import XCoordinator
 
-class AppCoordinator: NavigationCoordinator {
+enum AppRoute: Route {
+    case login
+    case maintabbar
+    case deepLink
+}
 
+class AppCoordinator: NavigationCoordinator<AppRoute> {
+
+    init() {
+        super.init(initialRoute: .login)
+    }
+    
+    override func prepareTransition(for route: AppRoute) -> NavigationTransition {
+        switch route {
+        case .login:
+            let loginVC = LoginViewController.fromStoryboard(.login)
+            let loginVM = LoginViewModel(router: anyRouter)
+            loginVC.bind(to: loginVM)
+            return .push(loginVC)
+        case .maintabbar:
+            let tabbarCoordinator = MainTabbarCondinator()
+            return .present(tabbarCoordinator)
+        case .deepLink:
+            return deepLink(AppRoute.login, FollowRepoRoute.followRepo)
+        }
+    }
 }
