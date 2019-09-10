@@ -1,23 +1,23 @@
 //
-//  SearchRepoViewModel.swift
+//  FollowRepoViewModel.swift
 //  EGBase-MVVM-C
 //
 //  Created by nguyen.duc.huy on 9/10/19.
 //  Copyright © 2019 8Group. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import XCoordinator
 
-class SearchRepoViewModel {
-
+class FollowRepoViewModel {
+    
     // MARK: - Variable
     
-    private let router: AnyRouter<SearchRepoRoute>
+    private let router: AnyRouter<FollowRepoRoute>
     
     // MARK: - Init
     
-    init(router: AnyRouter<SearchRepoRoute>) {
+    init(router: AnyRouter<FollowRepoRoute>) {
         self.router = router
     }
     
@@ -25,6 +25,7 @@ class SearchRepoViewModel {
     
     
     // MARK: - Logic
-
-
+    
+    
 }
+

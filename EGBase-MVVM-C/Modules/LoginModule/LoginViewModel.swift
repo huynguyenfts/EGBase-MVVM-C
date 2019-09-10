@@ -7,15 +7,35 @@
 //
 
 import Foundation
+import XCoordinator
 
-class LoginViewModel: NSObject {
+class LoginViewModel {
+    
+    // MARK: - Variable
+    
+    private let router: AnyRouter<AppRoute>
+    
     var email = Dynamic<String>("")
     var password = Dynamic<String>("")
-    var enableLogin = Dynamic<Bool> (false)
+    var enableLogin = Dynamic<Bool>(false)
+    
+    // MARK: - Init
+    
+    init(router: AnyRouter<AppRoute>) {
+        self.router = router
+    }
+    
+    // MARK: - Navigator
+    
+    private func gotoMainTabbar() {
+        router.trigger(.maintabbar)
+    }
+    
+    // MARK: - Logic
     
     func validateEmail() -> Bool {
-        if email.value.isEmpty == true ||
-            HelperManager.isValidEmail(email.value) == false {
+       if email.value.isEmpty == true ||
+            email.value.isValidEmail() == false {
             return false
         }
         return true
@@ -36,4 +56,10 @@ class LoginViewModel: NSObject {
             enableLogin.value = false
         }
     }
+    
+    func requestLogin() {
+        // API request login
+        gotoMainTabbar()
+    }
+    
 }
