@@ -175,6 +175,7 @@
 		CE3AC2152327A1FA00F26419 /* SettingModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE54BB952327C96F00CA0453 /* AboutUs */,
 				CE54BB832327B10300CA0453 /* SettingViewController.swift */,
 				CE54BB852327B11600CA0453 /* Setting.storyboard */,
 				CE54BB872327B14400CA0453 /* SettingViewModel.swift */,
@@ -186,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				CE54BB892327B38A00CA0453 /* Follow.storyboard */,
-				CE54BB952327C96F00CA0453 /* AboutUs */,
 				CE54BB962327C99400CA0453 /* FollowRepo */,
 			);
 			path = FollowRepoModule;
@@ -236,7 +236,6 @@
 				CE8D1A7923225076005CF0F8 /* String+Ext.swift */,
 				CE8D1A7F23225539005CF0F8 /* Storyboard+Ext.swift */,
 				CE2EC0E6232658DC00A336C2 /* BindableType.swift */,
-				CE54BB812327A57C00CA0453 /* StoryboardIdentifier.swift */,
 				CE54BB912327BC7200CA0453 /* Logger.swift */,
 			);
 			path = Utils;
@@ -274,6 +273,7 @@
 		CE8D1A5B2322400F005CF0F8 /* Define */ = {
 			isa = PBXGroup;
 			children = (
+				CE54BB812327A57C00CA0453 /* StoryboardIdentifier.swift */,
 				CE8D1A7723224F61005CF0F8 /* Config.swift */,
 			);
 			path = Define;
