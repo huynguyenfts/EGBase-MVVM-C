@@ -8,31 +8,34 @@
 
 import Alamofire
 
-enum RepoRouter: URLRequestConvertible {
-    case getRepos(parameters: Parameters)
+enum SearchRepoRouter {
+    case searchRepo(parameters: Parameters)
+}
+
+extension SearchRepoRouter: ServiceRouterType {
     
     var method: HTTPMethod {
         switch self {
-        case .getRepos:
+        case .searchRepo:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .getRepos :
+        case .searchRepo :
             return "/search/repositories"
         }
     }
     // MARK: URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        let url = try Config.baseUrl.asURL()
+        let url = try asBaseURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case .getRepos(let parameters):
+        case .searchRepo(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         }
         

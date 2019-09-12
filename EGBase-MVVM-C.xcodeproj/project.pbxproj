@@ -31,13 +31,18 @@
 		CE8D1A6B23224AE1005CF0F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A6A23224AE1005CF0F8 /* LoginViewController.swift */; };
 		CE8D1A6D23224AE4005CF0F8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A6C23224AE4005CF0F8 /* LoginViewModel.swift */; };
 		CE8D1A6F23224B1A005CF0F8 /* RepoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A6E23224B1A005CF0F8 /* RepoRouter.swift */; };
-		CE8D1A7123224B28005CF0F8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7023224B28005CF0F8 /* ApiClient.swift */; };
+		CE8D1A7123224B28005CF0F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7023224B28005CF0F8 /* NetworkManager.swift */; };
 		CE8D1A7323224B35005CF0F8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7223224B35005CF0F8 /* Repo.swift */; };
 		CE8D1A7523224B4C005CF0F8 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7423224B4C005CF0F8 /* TextField.swift */; };
 		CE8D1A7823224F61005CF0F8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7723224F61005CF0F8 /* Config.swift */; };
 		CE8D1A7A23225076005CF0F8 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7923225076005CF0F8 /* String+Ext.swift */; };
 		CE8D1A7C232252B8005CF0F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7B232252B8005CF0F8 /* AppCoordinator.swift */; };
 		CE8D1A8023225539005CF0F8 /* Storyboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7F23225539005CF0F8 /* Storyboard+Ext.swift */; };
+		CED0EEA42329EAEB005C53B3 /* ServiceRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEA32329EAEB005C53B3 /* ServiceRouterType.swift */; };
+		CED0EEA6232A032D005C53B3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEA5232A032D005C53B3 /* Constant.swift */; };
+		CED0EEA8232A329D005C53B3 /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEA7232A329D005C53B3 /* RepoList.swift */; };
+		CED0EEAD232A42E5005C53B3 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0EEAB232A42E5005C53B3 /* RepoTableViewCell.xib */; };
+		CED0EEAE232A42E5005C53B3 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEAC232A42E5005C53B3 /* RepoTableViewCell.swift */; };
 		CEE296292320E2B700813113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE296282320E2B700813113 /* AppDelegate.swift */; };
 		CEE2962E2320E2B700813113 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE2962C2320E2B700813113 /* Login.storyboard */; };
 		CEE296312320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEE2962F2320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld */; };
@@ -45,6 +50,7 @@
 		CEE296362320E2BA00813113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE296342320E2BA00813113 /* LaunchScreen.storyboard */; };
 		CEE296412320E2BA00813113 /* EGBase_MVVM_CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE296402320E2BA00813113 /* EGBase_MVVM_CTests.swift */; };
 		CEE2964C2320E2BA00813113 /* EGBase_MVVM_CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2964B2320E2BA00813113 /* EGBase_MVVM_CUITests.swift */; };
+		CEF5C07F2328C71900D5354B /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5C07E2328C71900D5354B /* RepoService.swift */; };
 		D68408E98BD2C7EF2FBF8AC6 /* Pods_EGBase_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABDE37D3EEBF692AE59ECC6 /* Pods_EGBase_MVVM_CTests.framework */; };
 		E46F1AA8DD39B8546B7A1550 /* Pods_EGBase_MVVM_CUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EA235353F444602FF00570 /* Pods_EGBase_MVVM_CUITests.framework */; };
 /* End PBXBuildFile section */
@@ -98,13 +104,18 @@
 		CE8D1A6A23224AE1005CF0F8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE8D1A6C23224AE4005CF0F8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CE8D1A6E23224B1A005CF0F8 /* RepoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoRouter.swift; sourceTree = "<group>"; };
-		CE8D1A7023224B28005CF0F8 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		CE8D1A7023224B28005CF0F8 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CE8D1A7223224B35005CF0F8 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		CE8D1A7423224B4C005CF0F8 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		CE8D1A7723224F61005CF0F8 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CE8D1A7923225076005CF0F8 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		CE8D1A7B232252B8005CF0F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE8D1A7F23225539005CF0F8 /* Storyboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Ext.swift"; sourceTree = "<group>"; };
+		CED0EEA32329EAEB005C53B3 /* ServiceRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRouterType.swift; sourceTree = "<group>"; };
+		CED0EEA5232A032D005C53B3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CED0EEA7232A329D005C53B3 /* RepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
+		CED0EEAB232A42E5005C53B3 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		CED0EEAC232A42E5005C53B3 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		CEE296252320E2B700813113 /* EGBase-MVVM-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EGBase-MVVM-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE296282320E2B700813113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE2962D2320E2B700813113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -118,6 +129,7 @@
 		CEE296472320E2BA00813113 /* EGBase-MVVM-CUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EGBase-MVVM-CUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE2964B2320E2BA00813113 /* EGBase_MVVM_CUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGBase_MVVM_CUITests.swift; sourceTree = "<group>"; };
 		CEE2964D2320E2BA00813113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF5C07E2328C71900D5354B /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		D76ACA132AD7956D86952658 /* Pods_EGBase_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EGBase_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -212,10 +224,10 @@
 		CE8D1A5423223E5F005CF0F8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE8D1A60232243D9005CF0F8 /* LoginModule */,
+				CE8D1A612322459F005CF0F8 /* SearchModule */,
 				CE54BB7A2327A2A900CA0453 /* FollowRepoModule */,
 				CE3AC2152327A1FA00F26419 /* SettingModule */,
-				CE8D1A612322459F005CF0F8 /* SearchModule */,
-				CE8D1A60232243D9005CF0F8 /* LoginModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -244,8 +256,10 @@
 		CE8D1A5723223EBB005CF0F8 /* NetworkServices */ = {
 			isa = PBXGroup;
 			children = (
-				CE8D1A7023224B28005CF0F8 /* ApiClient.swift */,
+				CE8D1A7023224B28005CF0F8 /* NetworkManager.swift */,
 				CE8D1A6E23224B1A005CF0F8 /* RepoRouter.swift */,
+				CEF5C07E2328C71900D5354B /* RepoService.swift */,
+				CED0EEA32329EAEB005C53B3 /* ServiceRouterType.swift */,
 			);
 			path = NetworkServices;
 			sourceTree = "<group>";
@@ -254,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8D1A7223224B35005CF0F8 /* Repo.swift */,
+				CED0EEA7232A329D005C53B3 /* RepoList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +290,7 @@
 			children = (
 				CE54BB812327A57C00CA0453 /* StoryboardIdentifier.swift */,
 				CE8D1A7723224F61005CF0F8 /* Config.swift */,
+				CED0EEA5232A032D005C53B3 /* Constant.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -316,11 +332,19 @@
 		CE8D1A612322459F005CF0F8 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				CEF5C0792328A4BE00D5354B /* SearchRepo */,
 				CE54BB7B2327A2D800CA0453 /* Search.storyboard */,
-				CE54BB7D2327A36E00CA0453 /* SearchRepoViewController.swift */,
-				CE54BB7F2327A3BC00CA0453 /* SearchRepoViewModel.swift */,
 			);
 			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		CED0EEAA232A42E5005C53B3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CED0EEAB232A42E5005C53B3 /* RepoTableViewCell.xib */,
+				CED0EEAC232A42E5005C53B3 /* RepoTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEE2961C2320E2B700813113 = {
@@ -381,6 +405,16 @@
 				CEE2964D2320E2BA00813113 /* Info.plist */,
 			);
 			path = "EGBase-MVVM-CUITests";
+			sourceTree = "<group>";
+		};
+		CEF5C0792328A4BE00D5354B /* SearchRepo */ = {
+			isa = PBXGroup;
+			children = (
+				CED0EEAA232A42E5005C53B3 /* Cell */,
+				CE54BB7D2327A36E00CA0453 /* SearchRepoViewController.swift */,
+				CE54BB7F2327A3BC00CA0453 /* SearchRepoViewModel.swift */,
+			);
+			path = SearchRepo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED0EEAD232A42E5005C53B3 /* RepoTableViewCell.xib in Resources */,
 				CEE296362320E2BA00813113 /* LaunchScreen.storyboard in Resources */,
 				CEE296332320E2BA00813113 /* Assets.xcassets in Resources */,
 				CE54BB862327B11600CA0453 /* Setting.storyboard in Resources */,
@@ -608,7 +643,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8D1A6B23224AE1005CF0F8 /* LoginViewController.swift in Sources */,
+				CED0EEAE232A42E5005C53B3 /* RepoTableViewCell.swift in Sources */,
 				CE54BB7E2327A36E00CA0453 /* SearchRepoViewController.swift in Sources */,
+				CED0EEA42329EAEB005C53B3 /* ServiceRouterType.swift in Sources */,
 				CE8D1A7523224B4C005CF0F8 /* TextField.swift in Sources */,
 				CE8D1A7A23225076005CF0F8 /* String+Ext.swift in Sources */,
 				CE54BB882327B14400CA0453 /* SettingViewModel.swift in Sources */,
@@ -617,18 +654,21 @@
 				CE8D1A8023225539005CF0F8 /* Storyboard+Ext.swift in Sources */,
 				CE2EC0E92326677A00A336C2 /* MainTabbarCondinator.swift in Sources */,
 				CE54BB922327BC7200CA0453 /* Logger.swift in Sources */,
-				CE8D1A7123224B28005CF0F8 /* ApiClient.swift in Sources */,
+				CE8D1A7123224B28005CF0F8 /* NetworkManager.swift in Sources */,
 				CE54BB802327A3BC00CA0453 /* SearchRepoViewModel.swift in Sources */,
 				CE8D1A6F23224B1A005CF0F8 /* RepoRouter.swift in Sources */,
 				CE54BB8C2327B3A000CA0453 /* FollowRepoViewController.swift in Sources */,
 				CE8D1A7C232252B8005CF0F8 /* AppCoordinator.swift in Sources */,
 				CE54BB842327B10300CA0453 /* SettingViewController.swift in Sources */,
 				CE8D1A7823224F61005CF0F8 /* Config.swift in Sources */,
+				CEF5C07F2328C71900D5354B /* RepoService.swift in Sources */,
+				CED0EEA6232A032D005C53B3 /* Constant.swift in Sources */,
 				CEE296312320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld in Sources */,
 				CE54BB942327C94000CA0453 /* AboutUsViewController.swift in Sources */,
 				CE8D1A6723224AB3005CF0F8 /* Dynamic.swift in Sources */,
 				CE8D1A6D23224AE4005CF0F8 /* LoginViewModel.swift in Sources */,
 				CE8D1A7323224B35005CF0F8 /* Repo.swift in Sources */,
+				CED0EEA8232A329D005C53B3 /* RepoList.swift in Sources */,
 				CE2EC0E7232658DC00A336C2 /* BindableType.swift in Sources */,
 				CE2EC0ED2326693000A336C2 /* FollowRepoCoordinator.swift in Sources */,
 				CE54BB822327A57C00CA0453 /* StoryboardIdentifier.swift in Sources */,
