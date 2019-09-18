@@ -11,7 +11,7 @@ import XCoordinator
 
 enum SearchRepoRoute: Route {
     case searchRepo
-    case userList
+    case repoInfo(Repo)
 }
 
 class SearchRepoCoordinator: NavigationCoordinator<SearchRepoRoute> {
@@ -27,9 +27,10 @@ class SearchRepoCoordinator: NavigationCoordinator<SearchRepoRoute> {
             let viewModel = SearchRepoViewModel.init(router: anyRouter)
             searchRepo.bind(to: viewModel)
             return .push(searchRepo)
-        case .userList:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .white
+        case .repoInfo(let repo):
+            let vc = RepoInfoViewController.fromStoryboard(.search)
+            let viewModel = RepoInfoViewModel.init(router: anyRouter, repo: repo)
+            vc.bind(to: viewModel)
             return .push(vc)
         }
     }

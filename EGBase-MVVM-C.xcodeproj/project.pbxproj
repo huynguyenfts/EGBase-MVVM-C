@@ -38,6 +38,13 @@
 		CE8D1A7A23225076005CF0F8 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7923225076005CF0F8 /* String+Ext.swift */; };
 		CE8D1A7C232252B8005CF0F8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7B232252B8005CF0F8 /* AppCoordinator.swift */; };
 		CE8D1A8023225539005CF0F8 /* Storyboard+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D1A7F23225539005CF0F8 /* Storyboard+Ext.swift */; };
+		CEAAE2AB23324C0D00394966 /* MockupAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE2AA23324C0D00394966 /* MockupAppCoordinator.swift */; };
+		CEAAE2AD2332577400394966 /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE2AC2332577400394966 /* LoginViewControllerTest.swift */; };
+		CEAFB04C2331E3CF0049FF42 /* RepoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFB04B2331E3CF0049FF42 /* RepoInfoViewController.swift */; };
+		CEAFB04E2331E4060049FF42 /* RepoInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFB04D2331E4060049FF42 /* RepoInfoViewModel.swift */; };
+		CEAFB0512331F5170049FF42 /* HelperManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFB0502331F5170049FF42 /* HelperManagerTest.swift */; };
+		CEAFB055233203EF0049FF42 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFB054233203EF0049FF42 /* LoginViewModelTest.swift */; };
+		CEAFB058233206B90049FF42 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAFB057233206B90049FF42 /* TestRouter.swift */; };
 		CED0EEA42329EAEB005C53B3 /* ServiceRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEA32329EAEB005C53B3 /* ServiceRouterType.swift */; };
 		CED0EEA6232A032D005C53B3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEA5232A032D005C53B3 /* Constant.swift */; };
 		CED0EEA8232A329D005C53B3 /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEA7232A329D005C53B3 /* RepoList.swift */; };
@@ -45,7 +52,6 @@
 		CED0EEAE232A42E5005C53B3 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0EEAC232A42E5005C53B3 /* RepoTableViewCell.swift */; };
 		CEE296292320E2B700813113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE296282320E2B700813113 /* AppDelegate.swift */; };
 		CEE2962E2320E2B700813113 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE2962C2320E2B700813113 /* Login.storyboard */; };
-		CEE296312320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEE2962F2320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld */; };
 		CEE296332320E2BA00813113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE296322320E2BA00813113 /* Assets.xcassets */; };
 		CEE296362320E2BA00813113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE296342320E2BA00813113 /* LaunchScreen.storyboard */; };
 		CEE296412320E2BA00813113 /* EGBase_MVVM_CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE296402320E2BA00813113 /* EGBase_MVVM_CTests.swift */; };
@@ -111,6 +117,13 @@
 		CE8D1A7923225076005CF0F8 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		CE8D1A7B232252B8005CF0F8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		CE8D1A7F23225539005CF0F8 /* Storyboard+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Ext.swift"; sourceTree = "<group>"; };
+		CEAAE2AA23324C0D00394966 /* MockupAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupAppCoordinator.swift; sourceTree = "<group>"; };
+		CEAAE2AC2332577400394966 /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		CEAFB04B2331E3CF0049FF42 /* RepoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoViewController.swift; sourceTree = "<group>"; };
+		CEAFB04D2331E4060049FF42 /* RepoInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoInfoViewModel.swift; sourceTree = "<group>"; };
+		CEAFB0502331F5170049FF42 /* HelperManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManagerTest.swift; sourceTree = "<group>"; };
+		CEAFB054233203EF0049FF42 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
+		CEAFB057233206B90049FF42 /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
 		CED0EEA32329EAEB005C53B3 /* ServiceRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRouterType.swift; sourceTree = "<group>"; };
 		CED0EEA5232A032D005C53B3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CED0EEA7232A329D005C53B3 /* RepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
@@ -119,7 +132,6 @@
 		CEE296252320E2B700813113 /* EGBase-MVVM-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EGBase-MVVM-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE296282320E2B700813113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE2962D2320E2B700813113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		CEE296302320E2B700813113 /* EGBase_MVVM_C.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EGBase_MVVM_C.xcdatamodel; sourceTree = "<group>"; };
 		CEE296322320E2BA00813113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE296352320E2BA00813113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE296372320E2BA00813113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -297,7 +309,6 @@
 		CE8D1A5C23224099005CF0F8 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				CEE2962F2320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 		CE8D1A612322459F005CF0F8 /* SearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				CEAFB04A2331E3820049FF42 /* RepoInfo */,
 				CEF5C0792328A4BE00D5354B /* SearchRepo */,
 				CE54BB7B2327A2D800CA0453 /* Search.storyboard */,
 			);
@@ -344,6 +356,49 @@
 				CEF5C07E2328C71900D5354B /* RepoService.swift */,
 			);
 			path = RepoService;
+			sourceTree = "<group>";
+		};
+		CEAFB04A2331E3820049FF42 /* RepoInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CEAFB04B2331E3CF0049FF42 /* RepoInfoViewController.swift */,
+				CEAFB04D2331E4060049FF42 /* RepoInfoViewModel.swift */,
+			);
+			path = RepoInfo;
+			sourceTree = "<group>";
+		};
+		CEAFB04F2331F4DF0049FF42 /* ManagerTest */ = {
+			isa = PBXGroup;
+			children = (
+				CEAFB0502331F5170049FF42 /* HelperManagerTest.swift */,
+			);
+			path = ManagerTest;
+			sourceTree = "<group>";
+		};
+		CEAFB052233203A70049FF42 /* ModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+				CEAFB053233203B90049FF42 /* LoginModuleTest */,
+			);
+			path = ModuleTest;
+			sourceTree = "<group>";
+		};
+		CEAFB053233203B90049FF42 /* LoginModuleTest */ = {
+			isa = PBXGroup;
+			children = (
+				CEAFB054233203EF0049FF42 /* LoginViewModelTest.swift */,
+				CEAAE2AC2332577400394966 /* LoginViewControllerTest.swift */,
+			);
+			path = LoginModuleTest;
+			sourceTree = "<group>";
+		};
+		CEAFB0562332069A0049FF42 /* TestHelper */ = {
+			isa = PBXGroup;
+			children = (
+				CEAFB057233206B90049FF42 /* TestRouter.swift */,
+				CEAAE2AA23324C0D00394966 /* MockupAppCoordinator.swift */,
+			);
+			path = TestHelper;
 			sourceTree = "<group>";
 		};
 		CED0EEAA232A42E5005C53B3 /* Cell */ = {
@@ -400,6 +455,9 @@
 		CEE2963F2320E2BA00813113 /* EGBase-MVVM-CTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEAFB0562332069A0049FF42 /* TestHelper */,
+				CEAFB052233203A70049FF42 /* ModuleTest */,
+				CEAFB04F2331F4DF0049FF42 /* ManagerTest */,
 				CEE296402320E2BA00813113 /* EGBase_MVVM_CTests.swift */,
 				CEE296422320E2BA00813113 /* Info.plist */,
 			);
@@ -671,9 +729,9 @@
 				CE8D1A7823224F61005CF0F8 /* Config.swift in Sources */,
 				CEF5C07F2328C71900D5354B /* RepoService.swift in Sources */,
 				CED0EEA6232A032D005C53B3 /* Constant.swift in Sources */,
-				CEE296312320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld in Sources */,
 				CE54BB942327C94000CA0453 /* AboutUsViewController.swift in Sources */,
 				CE8D1A6723224AB3005CF0F8 /* Dynamic.swift in Sources */,
+				CEAFB04E2331E4060049FF42 /* RepoInfoViewModel.swift in Sources */,
 				CE8D1A6D23224AE4005CF0F8 /* LoginViewModel.swift in Sources */,
 				CE8D1A7323224B35005CF0F8 /* Repo.swift in Sources */,
 				CED0EEA8232A329D005C53B3 /* RepoList.swift in Sources */,
@@ -684,6 +742,7 @@
 				CE3AC21323275AE500F26419 /* SettingCoordinator.swift in Sources */,
 				CE8D1A6923224ABE005CF0F8 /* HelperManager.swift in Sources */,
 				CE2EC0EB2326690200A336C2 /* SearchRepoCoordinator.swift in Sources */,
+				CEAFB04C2331E3CF0049FF42 /* RepoInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,7 +750,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAAE2AD2332577400394966 /* LoginViewControllerTest.swift in Sources */,
+				CEAFB058233206B90049FF42 /* TestRouter.swift in Sources */,
 				CEE296412320E2BA00813113 /* EGBase_MVVM_CTests.swift in Sources */,
+				CEAFB055233203EF0049FF42 /* LoginViewModelTest.swift in Sources */,
+				CEAAE2AB23324C0D00394966 /* MockupAppCoordinator.swift in Sources */,
+				CEAFB0512331F5170049FF42 /* HelperManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1012,19 +1076,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CEE2962F2320E2B700813113 /* EGBase_MVVM_C.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CEE296302320E2B700813113 /* EGBase_MVVM_C.xcdatamodel */,
-			);
-			currentVersion = CEE296302320E2B700813113 /* EGBase_MVVM_C.xcdatamodel */;
-			path = EGBase_MVVM_C.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CEE2961D2320E2B700813113 /* Project object */;
 }

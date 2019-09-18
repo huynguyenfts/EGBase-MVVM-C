@@ -13,7 +13,6 @@ import XCoordinator
 enum AppRoute: Route {
     case login
     case maintabbar
-    case deepLink
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoute> {
@@ -32,8 +31,6 @@ class AppCoordinator: NavigationCoordinator<AppRoute> {
         case .maintabbar:
             let tabbarCoordinator = MainTabbarCondinator()
             return .present(tabbarCoordinator)
-        case .deepLink:
-            return deepLink(AppRoute.login, FollowRepoRoute.followRepo)
         }
     }
 }

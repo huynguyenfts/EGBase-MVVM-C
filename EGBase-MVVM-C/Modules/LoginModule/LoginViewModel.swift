@@ -33,24 +33,9 @@ class LoginViewModel {
     
     // MARK: - Logic
     
-    func validateEmail() -> Bool {
-       if email.value.isEmpty == true ||
-            email.value.isValidEmail() == false {
-            return false
-        }
-        return true
-    }
-    
-    func validatePassword() -> Bool {
-        if password.value.isEmpty == true ||
-            password.value.count < 8 {
-            return false
-        }
-        return true
-    }
-    
     func checkEnableLogin() {
-        if self.validateEmail() && self.validatePassword() {
+        if HelperManager.isValidEmail(email.value) &&
+            HelperManager.isValidPassword(password.value) {
             enableLogin.value = true
         } else {
             enableLogin.value = false

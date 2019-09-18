@@ -32,7 +32,11 @@ class SearchRepoViewModel {
     }
     
     // MARK: - Navigator
-    
+    func gotoRepoInfo(index: IndexPath) {
+        guard index.row < repos.value.count else { return }
+        let repo = repos.value[index.row]
+        router.trigger(.repoInfo(repo))
+    }
     
     // MARK: - Logic
     func searchRepo(with keyword: String?) {
@@ -48,7 +52,7 @@ class SearchRepoViewModel {
         }
     }
     
-    func requestSearchRepo(with keyword: String?) {
+    private func requestSearchRepo(with keyword: String?) {
 
         _ = RepoService.searchRepo(keyword: keyword, page: currentPage) { [weak self](response) in
             guard let strongSelf = self else { return }

@@ -42,7 +42,9 @@ class SearchRepoViewController: BaseViewController, BindableType {
 }
 
 extension SearchRepoViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.gotoRepoInfo(index: indexPath)
+    }
 }
 
 extension SearchRepoViewController: UITableViewDataSource {
