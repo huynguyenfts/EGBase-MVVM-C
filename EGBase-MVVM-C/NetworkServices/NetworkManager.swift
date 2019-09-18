@@ -1,4 +1,5 @@
 import Alamofire
+import SwiftyJSON
 
 public typealias ResponseHandler = (ResponseObject?) -> Void
 
@@ -14,14 +15,8 @@ struct HeaderValue {
     static let ApplicationXWWWFormUrlencoded       = "application/x-www-form-urlencoded"
 }
 
-enum RequestResult {
-    case success
-    case error
-    case cancelled
-}
-
 public enum HttpStatusCode: Int {
-    case ok = 200
+    case success = 200
     case created = 201
     case accepted = 202
     case noContent = 204
@@ -38,6 +33,8 @@ public enum HttpStatusCode: Int {
     case cancelled = -999
     case timeOut = -1001
     case cannotFindHost = -1003
+    case missingLocalParmas = -9999
+    case errorResponseObject = -8888
 
     init?(statusCode: Int?) {
         guard let _statusCode = statusCode else {
@@ -47,35 +44,42 @@ public enum HttpStatusCode: Int {
     }
 }
 
-public struct ResponseObject {
-    let data: AnyObject?
-    let statusCode: HttpStatusCode? // code error, incase success
-    let result: RequestResult
+struct APIStatus {
+    let statusCode: HttpStatusCode?
+    let messageCode: String?
 }
 
-struct ApiClient {
+protocol ApiResponseType {
+    associatedtype DataType
+    var data: DataType? { get }
+    var status: APIStatus { get }
+}
 
-    private static let defaultEncoding = JSONEncoding.default
+public struct ResponseObject: ApiResponseType {
+    var data: AnyObject?
+    var status: APIStatus // code error, incase success
+}
 
-    private static let defaultSessionManager: SessionManager = {
+class NetworkManager {
+    
+    static let shared = NetworkManager()
+    var manager: SessionManager
 
+    init() {
         // defaultHeaders
         var defaultHeaders = SessionManager.defaultHTTPHeaders
         defaultHeaders[HeaderKey.Accept] = HeaderValue.ApplicationJson
-
+        
         // configuration
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = defaultHeaders
         configuration.timeoutIntervalForRequest = 20
-
-        // sessionManager
-        let sessionManager = SessionManager(configuration: configuration)
-
-        return sessionManager
-    }()
+        
+        manager = SessionManager(configuration: configuration)
+    }
 
     // MARK: - Functions
-    private static func analyzeResponse(response: DataResponse<Any>, completionHandler: ResponseHandler?) {
+    private func analyzeResponse(response: DataResponse<Any>, completionHandler: ResponseHandler?) {
         debugPrint(response)
 
         // http code
@@ -83,65 +87,59 @@ struct ApiClient {
 
         switch response.result {
         case .success(let value):
-            ApiClient.successWithValue(data: value as AnyObject, httpStatusCode: httpStatusCode, completionHandler: completionHandler)
+            self.successWithValue(data: value as AnyObject, httpStatusCode: httpStatusCode, completionHandler: completionHandler)
 
         case .failure(let error):
-            ApiClient.failureWithError(error: error, data: response.data, httpStatusCode: httpStatusCode, completionHandler: completionHandler)
+            self.failureWithError(error: error, data: response.data, httpStatusCode: httpStatusCode, completionHandler: completionHandler)
         }
     }
 
-    private static func successWithValue(data: AnyObject, httpStatusCode: HttpStatusCode?, completionHandler: ResponseHandler?) {
+    private func successWithValue(data: AnyObject, httpStatusCode: HttpStatusCode?, completionHandler: ResponseHandler?) {
 
         // create obj response
-        let responseObject = ResponseObject(data: data, statusCode: httpStatusCode, result: RequestResult.success)
+        let status = APIStatus(statusCode: httpStatusCode, messageCode: nil)
+        let responseObject = ResponseObject(data: data, status: status)
 
         // block
         completionHandler?(responseObject)
 
     }
 
-    private static func failureWithError(error: Error?, data: Data? = nil, httpStatusCode: HttpStatusCode?, completionHandler: ResponseHandler?) {
+    private func failureWithError(error: Error?, data: Data? = nil, httpStatusCode: HttpStatusCode?, completionHandler: ResponseHandler?) {
         var errorCode: HttpStatusCode? = httpStatusCode
-        var requestResult: RequestResult = RequestResult.error
-        var errorData: AnyObject? = nil
+        var errorMessage: String?
 
         // check error code
         if error?._code == NSURLErrorTimedOut {  // Time out
             errorCode = HttpStatusCode(rawValue: NSURLErrorTimedOut)
-            requestResult = .error
         } else if error?._code == NSURLErrorCancelled {  // Cancelled
             errorCode = HttpStatusCode(rawValue: NSURLErrorCancelled)
-            requestResult = .cancelled
         } else if error?._code == NSURLErrorNotConnectedToInternet { // Not connected to internet
             errorCode = HttpStatusCode(rawValue: NSURLErrorNotConnectedToInternet)
-            requestResult = .error
         } else if error?._code == NSURLErrorCannotFindHost { // Can not Find Host
             errorCode = HttpStatusCode(rawValue: NSURLErrorCannotFindHost)
-            requestResult = .error
         } else {  // Orther
             if let _data = data {
-                do {
-                    errorData = try JSONSerialization.jsonObject(with: _data, options: []) as AnyObject
-                } catch {
-                }
+                let errorObject = JSON(_data)
+                errorMessage = errorObject["message"].string
             }
         }
 
         // create obj response
-        let responseObject = ResponseObject(data: errorData, statusCode: errorCode, result: requestResult)
+        let status = APIStatus(statusCode: errorCode, messageCode: errorMessage)
+        let responseObject = ResponseObject(data: nil, status: status)
 
         // block
         completionHandler?(responseObject)
     }
 
     // MARK: - Request
-    static func request(urlRequest: URLRequestConvertible, completionHandler: ResponseHandler? = nil) -> Request? {
+    func request(urlRequest: URLRequestConvertible, completionHandler: ResponseHandler? = nil) -> Request? {
 
         // Request
-        let manager = ApiClient.defaultSessionManager
         return manager.request(urlRequest).validate().responseJSON { (response) in
             // analyze response
-            ApiClient.analyzeResponse(response: response, completionHandler: completionHandler)
+            self.analyzeResponse(response: response, completionHandler: completionHandler)
         }
     }
 

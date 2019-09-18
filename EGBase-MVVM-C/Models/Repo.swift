@@ -41,30 +41,5 @@ class Repo: NSObject {
         self.starCount = json["stargazers_count"].intValue
         self.folkCount = json["forks"].intValue
     }
-    
-    static func fromJSONDatas(jsons: [JSON]?) -> [Repo] {
-        guard let jsonData = jsons else { return [] }
-        var repos: [Repo] = []
-        
-        // loops
-        for item in jsonData {
-            if let repo = Repo(json: item) {
-                repos.append(repo)
-            }
-        }
-        
-        // return
-        return repos
-    }
-    
-    static func fromDatas(jsonObject: Any?) -> [Repo] {
-        guard let jsonData = jsonObject else { return [] }
-        
-        // parse json
-        let json = JSON(jsonData)
-        let reposData = json["items"].arrayValue
-        
-        return Repo.fromJSONDatas(jsons: reposData)
-    }
 }
 
