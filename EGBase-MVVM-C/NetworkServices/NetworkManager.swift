@@ -80,7 +80,7 @@ class NetworkManager {
 
     // MARK: - Functions
     private func analyzeResponse(response: DataResponse<Any>, completionHandler: ResponseHandler?) {
-        debugPrint(response)
+        //debugPrint(response)
 
         // http code
         let httpStatusCode = HttpStatusCode(statusCode: response.response?.statusCode)

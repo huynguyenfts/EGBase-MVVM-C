@@ -15,6 +15,8 @@ class Repo: NSObject {
     var urlString: String?
     var starCount: Int?
     var folkCount: Int?
+    var descriptionRepo: String?
+    var language: String?
     
     convenience init?(json: JSON?) {
         guard let _json = json else { return nil }
@@ -40,6 +42,8 @@ class Repo: NSObject {
         self.urlString = json["html_url"].string
         self.starCount = json["stargazers_count"].intValue
         self.folkCount = json["forks"].intValue
+        self.descriptionRepo = json["description"].string
+        self.language = json["language"].string
     }
 }
 

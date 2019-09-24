@@ -18,10 +18,10 @@ public struct SearchRepoResponse: ApiResponseType {
 public typealias SearchRepoHandler = (SearchRepoResponse) -> Void
 
 class RepoService {
-
+    @discardableResult
     static func searchRepo(keyword: String?, itemPerPage: Int = Constant.maxItemPerPage,
                     page: Int = 0, completionHandler: @escaping SearchRepoHandler) -> Request? {
-        guard let keyword = keyword else {
+        guard let keyword = keyword, keyword.isEmpty != true else {
             let apiStatus = APIStatus(statusCode: .missingLocalParmas, messageCode: nil)
             completionHandler(SearchRepoResponse(data: nil, status: apiStatus))
             return nil

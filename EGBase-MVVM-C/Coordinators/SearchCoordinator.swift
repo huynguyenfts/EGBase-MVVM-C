@@ -9,27 +9,28 @@
 import UIKit
 import XCoordinator
 
-enum SearchRepoRoute: Route {
+enum SearchRoute: Route, Equatable {
     case searchRepo
-    case userList
+    case repoInfo(Repo)
 }
 
-class SearchRepoCoordinator: NavigationCoordinator<SearchRepoRoute> {
+class SearchCoordinator: NavigationCoordinator<SearchRoute> {
     
     init() {
         super.init(initialRoute: .searchRepo)
     }
     
-    override func prepareTransition(for route: SearchRepoRoute) -> NavigationTransition {
+    override func prepareTransition(for route: SearchRoute) -> NavigationTransition {
         switch route {
         case .searchRepo:
             let searchRepo = SearchRepoViewController.fromStoryboard(.search)
             let viewModel = SearchRepoViewModel.init(router: anyRouter)
             searchRepo.bind(to: viewModel)
             return .push(searchRepo)
-        case .userList:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .white
+        case .repoInfo(let repo):
+            let vc = RepoInfoViewController.fromStoryboard(.search)
+            let viewModel = RepoInfoViewModel.init(router: anyRouter, repo: repo)
+            vc.bind(to: viewModel)
             return .push(vc)
         }
     }

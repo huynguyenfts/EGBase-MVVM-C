@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchRepoViewController: BaseViewController, BindableType {
+class SearchRepoViewController: BaseViewController, BindableType, SearchRepoViewModelDelegate {
 
     var viewModel: SearchRepoViewModel!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -31,6 +31,7 @@ class SearchRepoViewController: BaseViewController, BindableType {
             self?.tableView.reloadData()
         }
         searchBar.delegate = self
+        viewModel.delegate = self
     }
     
     func defaultSearch() {
@@ -38,11 +39,23 @@ class SearchRepoViewController: BaseViewController, BindableType {
         searchBar.text = keywork
         viewModel.searchRepo(with: keywork)
     }
+    
+    func searchRepoError(apiStatus: APIStatus) {
+        if apiStatus.statusCode == HttpStatusCode.badRequest {
+            
+        } else if apiStatus.statusCode == HttpStatusCode.badRequest {
+            
+        } else {
+            
+        }
+    }
 
 }
 
 extension SearchRepoViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.gotoRepoInfo(index: indexPath)
+    }
 }
 
 extension SearchRepoViewController: UITableViewDataSource {
@@ -82,3 +95,10 @@ extension SearchRepoViewController: UISearchBarDelegate {
     }
 }
 
+func soduong(input: Int) -> Bool {
+    if input > 6 {
+        return true
+    } else {
+        return false
+    }
+}
