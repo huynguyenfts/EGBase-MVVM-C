@@ -22,7 +22,7 @@ class SettingViewModel {
     }
     
     // MARK: - Navigator
-    func goToLogin() {
+    func logout() {
         router.trigger(.logout)
     }
     
@@ -31,6 +31,4 @@ class SettingViewModel {
     }
     
     // MARK: - Logic
-    
-    
 }

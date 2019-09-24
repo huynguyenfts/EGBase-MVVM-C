@@ -34,8 +34,8 @@ class LoginViewModel {
     // MARK: - Logic
     
     func checkEnableLogin() {
-        if HelperManager.isValidEmail(email.value) &&
-            HelperManager.isValidPassword(password.value) {
+        if Validator.isValidEmail(email.value) &&
+            Validator.isValidPassword(password.value) {
             enableLogin.value = true
         } else {
             enableLogin.value = false

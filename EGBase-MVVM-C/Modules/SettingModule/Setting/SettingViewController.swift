@@ -32,6 +32,6 @@ class SettingViewController: BaseViewController, BindableType {
     }
     
     @IBAction func tapLogoutBtn(_ sender: Any) {
-        viewModel.goToLogin()
+        viewModel.logout()
     }
 }

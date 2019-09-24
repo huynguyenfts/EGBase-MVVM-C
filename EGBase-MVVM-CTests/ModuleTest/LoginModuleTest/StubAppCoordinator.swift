@@ -11,12 +11,15 @@ import XCoordinator
 @testable import EGBase_MVVM_C
 
 
-class MockupAppCoordinator: AppCoordinator {
-    var currentRoute: AppRoute?
+class StubAppCoordinator: AppCoordinator {
+    private var currentRoute: AppRoute?
 
     override func prepareTransition(for route: AppRoute) -> NavigationTransition {
         currentRoute = route
         return super.prepareTransition(for: route)
     }
     
+    func getCurrentRoute() -> AppRoute? {
+        return currentRoute
+    }
 }

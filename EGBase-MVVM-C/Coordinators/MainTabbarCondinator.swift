@@ -16,12 +16,12 @@ enum MainTabbarRoute: Route {
 }
 
 class MainTabbarCondinator: TabBarCoordinator<MainTabbarRoute> {
-    private let searchRepoRouter: AnyRouter<SearchRepoRoute>
+    private let searchRepoRouter: AnyRouter<SearchRoute>
     private let followRepoRouter: AnyRouter<FollowRepoRoute>
     private let settingRouter: AnyRouter<SettingRoute>
 
     convenience init() {
-        let searchRepoCoordinator = SearchRepoCoordinator()
+        let searchRepoCoordinator = SearchCoordinator()
         searchRepoCoordinator.rootViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         
         let followRepoCoordinator = FollowRepoCoordinator()
@@ -35,7 +35,7 @@ class MainTabbarCondinator: TabBarCoordinator<MainTabbarRoute> {
                   settingRouter: settingCoordinator.anyRouter)
     }
     
-    init(searchRepoRouter: AnyRouter<SearchRepoRoute>,
+    init(searchRepoRouter: AnyRouter<SearchRoute>,
          followRepoRouter: AnyRouter<FollowRepoRoute>,
          settingRouter: AnyRouter<SettingRoute>) {
         self.searchRepoRouter = searchRepoRouter
@@ -44,15 +44,15 @@ class MainTabbarCondinator: TabBarCoordinator<MainTabbarRoute> {
         super.init(tabs: [searchRepoRouter, followRepoRouter, settingRouter])
     }
     
-    override func prepareTransition(for route: MainTabbarRoute) -> TabBarTransition {
-        switch route {
-        case .searchRepo:
-            return .select(searchRepoRouter)
-        case .followRepo:
-            return .select(followRepoRouter)
-        case .setting:
-            return .select(settingRouter)
-        }
-    }
+//    override func prepareTransition(for route: MainTabbarRoute) -> TabBarTransition {
+//        switch route {
+//        case .searchRepo:
+//            return .select(searchRepoRouter)
+//        case .followRepo:
+//            return .select(followRepoRouter)
+//        case .setting:
+//            return .select(settingRouter)
+//        }
+//    }
 }
 

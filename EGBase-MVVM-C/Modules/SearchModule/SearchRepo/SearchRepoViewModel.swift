@@ -17,7 +17,7 @@ protocol SearchRepoViewModelDelegate: class {
 class SearchRepoViewModel {
 
     // MARK: - Variable
-    private let router: AnyRouter<SearchRepoRoute>
+    private let router: AnyRouter<SearchRoute>
     weak var delegate: SearchRepoViewModelDelegate?
     
     var searchText = Dynamic<String>("")
@@ -27,7 +27,7 @@ class SearchRepoViewModel {
     var lastKeyword: String?
     // MARK: - Init
     
-    init(router: AnyRouter<SearchRepoRoute>) {
+    init(router: AnyRouter<SearchRoute>) {
         self.router = router
     }
     
@@ -57,14 +57,17 @@ class SearchRepoViewModel {
         _ = RepoService.searchRepo(keyword: keyword, page: currentPage) { [weak self](response) in
             guard let strongSelf = self else { return }
 
+            
             if response.status.statusCode == .success {
                 if let repos = response.data?.repos, repos.count > 0 {
                     strongSelf.lastKeyword = keyword
                     strongSelf.maxPage = strongSelf.getTotalPage(total: response.data?.totalCount)
-
+                    
                     strongSelf.repos.value.append(contentsOf: repos)
-                } else {
+                } else  if response.data?.repos == [] {
                     strongSelf.repos.value = []
+                } else { // repos = nil
+                    
                 }
             } else {
                 strongSelf.repos.value = []

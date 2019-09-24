@@ -12,22 +12,18 @@ import XCoordinator
 
 class LoginViewModelTest: XCTestCase {
     var window: UIWindow!
-    var coordinator: MockupAppCoordinator!
-    var mockupLoginVC: LoginViewController!
+    var coordinator: StubAppCoordinator!
     var sut: LoginViewModel!
-    
     
     override func setUp() {
         window = UIWindow()
-        coordinator = MockupAppCoordinator.init()
+        coordinator = StubAppCoordinator.init()
         coordinator.setRoot(for: window)
-        mockupLoginVC = LoginViewController.fromStoryboard(.login)
         sut = LoginViewModel(router: coordinator.anyRouter)
     }
 
     override func tearDown() {
         coordinator = nil
-        mockupLoginVC = nil
         sut = nil
         window = nil
     }
@@ -44,15 +40,11 @@ class LoginViewModelTest: XCTestCase {
 extension LoginViewModelTest {
     
     func testLoginAction() {
-        // Arrange
-        mockupLoginVC.bind(to: sut)
-        mockupLoginVC.viewDidLoad()
-        
         // Act
-        mockupLoginVC.loginAction(UIButton())
+        sut.requestLogin()
         
         // Assert
-        XCTAssertEqual(coordinator.currentRoute, .maintabbar)
+        XCTAssertEqual(coordinator.getCurrentRoute(), .maintabbar)
         XCTAssertNotNil(coordinator.rootViewController.presentedViewController)
     }
 }

@@ -12,14 +12,14 @@ import XCTest
 
 class LoginViewControllerTest: XCTestCase {
     var window: UIWindow!
-    var coordinator: MockupAppCoordinator!
+    var coordinator: StubAppCoordinator!
     var mockupLoginViewModel: LoginViewModel!
     var sut: LoginViewController!
     
     
     override func setUp() {
         window = UIWindow()
-        coordinator = MockupAppCoordinator.init()
+        coordinator = StubAppCoordinator.init()
         coordinator.setRoot(for: window)
         mockupLoginViewModel = LoginViewModel(router: coordinator.anyRouter)
         sut = LoginViewController.fromStoryboard(.login)
@@ -49,6 +49,7 @@ class LoginViewControllerTest: XCTestCase {
         XCTAssertEqual(mockupLoginViewModel.password.value, dummyText)
     }
     
+    // test updateUI()
     func testLoginButtonEnable() {
         // Arrange
         mockupLoginViewModel.enableLogin.value = false

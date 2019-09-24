@@ -9,18 +9,18 @@
 import UIKit
 import XCoordinator
 
-enum SearchRepoRoute: Route {
+enum SearchRoute: Route, Equatable {
     case searchRepo
     case repoInfo(Repo)
 }
 
-class SearchRepoCoordinator: NavigationCoordinator<SearchRepoRoute> {
+class SearchCoordinator: NavigationCoordinator<SearchRoute> {
     
     init() {
         super.init(initialRoute: .searchRepo)
     }
     
-    override func prepareTransition(for route: SearchRepoRoute) -> NavigationTransition {
+    override func prepareTransition(for route: SearchRoute) -> NavigationTransition {
         switch route {
         case .searchRepo:
             let searchRepo = SearchRepoViewController.fromStoryboard(.search)

@@ -15,6 +15,7 @@ class HelperManagerTest: XCTestCase {
     //"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     func testValidEmail() {
         XCTAssertTrue(HelperManager.isValidEmail("email@example.com"))
+        XCTAssertTrue(HelperManager.isValidEmail("emailfjj.fjffjfj@example.com"))
         XCTAssertTrue(HelperManager.isValidEmail("very.common@example.com"))
         XCTAssertTrue(HelperManager.isValidEmail("disposable-style.email.with+symbol@example.com"))
         XCTAssertTrue(HelperManager.isValidEmail("l@example.vn"))
@@ -25,14 +26,14 @@ class HelperManagerTest: XCTestCase {
     }
     
     func testInvalidEmail() {
-        XCTAssertFalse(HelperManager.isValidEmail(""))
-        XCTAssertFalse(HelperManager.isValidEmail("plainaddress"))
-        XCTAssertFalse(HelperManager.isValidEmail("plainaddress.com"))
+        XCTAssertFalse(HelperManager.isValidEmail(""))// empty string
+        XCTAssertFalse(HelperManager.isValidEmail("plainaddress")) // plain
+        XCTAssertFalse(HelperManager.isValidEmail("plainaddress.com")) // thieu @
         XCTAssertFalse(HelperManager.isValidEmail("#@%^%#$@#$@#.com"))
         XCTAssertFalse(HelperManager.isValidEmail("@example.com"))
-        XCTAssertFalse(HelperManager.isValidEmail(" email@example.com"))
+        XCTAssertFalse(HelperManager.isValidEmail(" email@example.com.kiuu"))
         XCTAssertFalse(HelperManager.isValidEmail("email@example"))
-        XCTAssertFalse(HelperManager.isValidEmail("email@111.222.333.44444"))
+        XCTAssertFalse(HelperManager.isValidEmail("email@111.222.3"))
     }
 
     func testValidPassword() {

@@ -13,12 +13,12 @@ class RepoInfoViewModel {
     
     // MARK: - Variable
     
-    private let router: AnyRouter<SearchRepoRoute>
+    private let router: AnyRouter<SearchRoute>
     let repo: Repo
     
     // MARK: - Init
     
-    init(router: AnyRouter<SearchRepoRoute>, repo: Repo) {
+    init(router: AnyRouter<SearchRoute>, repo: Repo) {
         self.router = router
         self.repo = repo
     }

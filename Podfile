@@ -13,12 +13,12 @@ target 'EGBase-MVVM-C' do
 
   target 'EGBase-MVVM-CTests' do
     inherit! :search_paths
+    pod 'Mockingjay'
     # Pods for testing
   end
 
   target 'EGBase-MVVM-CUITests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
 end
