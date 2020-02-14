@@ -12,6 +12,7 @@ import XCoordinator
 enum SearchRoute: Route, Equatable {
     case searchRepo
     case repoInfo(Repo)
+    case callback(String)
 }
 
 class SearchCoordinator: NavigationCoordinator<SearchRoute> {
@@ -32,6 +33,10 @@ class SearchCoordinator: NavigationCoordinator<SearchRoute> {
             let viewModel = RepoInfoViewModel.init(router: anyRouter, repo: repo)
             vc.bind(to: viewModel)
             return .push(vc)
+        case .callback(let message):
+            let vc = rootViewController.viewControllers.first as! SearchRepoViewController
+            vc.viewModel.revice(message: message)
+            return .pop()
         }
     }
 }

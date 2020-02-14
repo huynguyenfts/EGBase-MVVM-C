@@ -24,7 +24,9 @@ class RepoInfoViewModel {
     }
     
     // MARK: - Navigator
-    
+    func callBack() {
+        router.trigger(.callback("hello world"))
+    }
     
     // MARK: - Logic
     

@@ -93,4 +93,7 @@ class SearchRepoViewModel {
         return Int(total / Constant.maxItemPerPage) + 1
     }
 
+    func revice(message: String) {
+        print(message)
+    }
 }

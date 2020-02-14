@@ -31,6 +31,10 @@ class RepoInfoViewController: BaseViewController, BindableType {
         numberStar.text = String(viewModel.repo.starCount ?? 0)
         numberFork.text = String(viewModel.repo.folkCount ?? 0)
         languageLabel.text = viewModel.repo.language
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "back", style: .done, target: self, action: #selector(back))
     }
     
+    @objc func back() {
+        viewModel.callBack()
+    }
 }
