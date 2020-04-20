@@ -26,6 +26,12 @@ class FollowRepoViewModel {
     
     // MARK: - Logic
     
-    
+    func pushToOther() {
+        let viewModel = OtherViewModel(router: self.router.anyRouter)
+        viewModel.showSomething = { content in
+            print(">>>>>> " + (content ?? ""))
+        }
+        self.router.trigger(.other(viewModel))
+    }
 }
 
