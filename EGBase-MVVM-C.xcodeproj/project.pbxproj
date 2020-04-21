@@ -70,6 +70,8 @@
 		CEF5C07F2328C71900D5354B /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5C07E2328C71900D5354B /* RepoService.swift */; };
 		D68408E98BD2C7EF2FBF8AC6 /* Pods_EGBase_MVVM_CTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ABDE37D3EEBF692AE59ECC6 /* Pods_EGBase_MVVM_CTests.framework */; };
 		E46F1AA8DD39B8546B7A1550 /* Pods_EGBase_MVVM_CUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EA235353F444602FF00570 /* Pods_EGBase_MVVM_CUITests.framework */; };
+		EFE7E1B7244DD733005A3F45 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE7E1B6244DD733005A3F45 /* OtherViewController.swift */; };
+		EFE7E1B9244DD77E005A3F45 /* OtherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE7E1B8244DD77E005A3F45 /* OtherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,8 @@
 		CEE2964D2320E2BA00813113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF5C07E2328C71900D5354B /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
 		D76ACA132AD7956D86952658 /* Pods_EGBase_MVVM_C.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EGBase_MVVM_C.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFE7E1B6244DD733005A3F45 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		EFE7E1B8244DD77E005A3F45 /* OtherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +318,8 @@
 			children = (
 				CE54BB8B2327B3A000CA0453 /* FollowRepoViewController.swift */,
 				CE54BB8D2327B3E500CA0453 /* FollowRepoViewModel.swift */,
+				EFE7E1B6244DD733005A3F45 /* OtherViewController.swift */,
+				EFE7E1B8244DD77E005A3F45 /* OtherViewModel.swift */,
 			);
 			path = FollowRepo;
 			sourceTree = "<group>";
@@ -834,6 +840,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8D1A6B23224AE1005CF0F8 /* LoginViewController.swift in Sources */,
+				EFE7E1B7244DD733005A3F45 /* OtherViewController.swift in Sources */,
 				CED0EEAE232A42E5005C53B3 /* RepoTableViewCell.swift in Sources */,
 				CE54BB7E2327A36E00CA0453 /* SearchRepoViewController.swift in Sources */,
 				CED0EEA42329EAEB005C53B3 /* ServiceRouterType.swift in Sources */,
@@ -848,6 +855,7 @@
 				CE54BB802327A3BC00CA0453 /* SearchRepoViewModel.swift in Sources */,
 				CE8D1A6F23224B1A005CF0F8 /* RepoRouter.swift in Sources */,
 				CE54BB8C2327B3A000CA0453 /* FollowRepoViewController.swift in Sources */,
+				EFE7E1B9244DD77E005A3F45 /* OtherViewModel.swift in Sources */,
 				CE8D1A7C232252B8005CF0F8 /* AppCoordinator.swift in Sources */,
 				CE54BB842327B10300CA0453 /* SettingViewController.swift in Sources */,
 				CE8D1A7823224F61005CF0F8 /* Config.swift in Sources */,

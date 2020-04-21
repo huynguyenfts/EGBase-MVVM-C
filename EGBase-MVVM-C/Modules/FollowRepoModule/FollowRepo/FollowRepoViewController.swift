@@ -25,4 +25,7 @@ class FollowRepoViewController: BaseViewController, BindableType {
         title = "Follow Repo"
     }
     
+    @IBAction func pushToOtherAction(_ sender: Any) {
+        self.viewModel.pushToOther()
+    }
 }

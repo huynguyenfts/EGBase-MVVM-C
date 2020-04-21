@@ -12,6 +12,8 @@ import XCoordinator
 enum FollowRepoRoute: Route {
     case followRepo
     case userList
+    case other(OtherViewModel)
+    case dismiss
 }
 
 class FollowRepoCoordinator: NavigationCoordinator<FollowRepoRoute> {
@@ -31,6 +33,12 @@ class FollowRepoCoordinator: NavigationCoordinator<FollowRepoRoute> {
             let vc = UIViewController()
             vc.view.backgroundColor = .white
             return .push(vc)
+        case .other(let viewModel):
+            let vc = OtherViewController.fromStoryboard(.follow)
+            vc.bind(to: viewModel)
+            return .push(vc)
+        case .dismiss:
+            return .pop()
         }
     }
 }
